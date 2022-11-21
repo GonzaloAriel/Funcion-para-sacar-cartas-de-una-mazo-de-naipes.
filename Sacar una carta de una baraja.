@@ -1,0 +1,66 @@
+#include <iostream>
+using namespace std;
+#include <cstdlib> /* srand, rand  */
+#include <ctime> /* time */
+
+void repartiR(int a[], int b[]);
+
+int main()
+{
+   
+    srand(time(NULL));
+
+  int mano_jugador = 0;
+  int mano_cpu = 0;
+  int mazo[3]={};
+  
+  
+  for(int i=0; i<3; i++)
+  {
+  	mazo[i] += i+1;
+  	cout<< mazo[i]<<endl;
+  }
+  
+  cout<<endl; 
+  
+  
+  
+   repartiR(mazo, mano_jugador);
+   repartiR(mazo, mano_jugador);
+ 
+   cout<< mano_jugador<<endl;
+   cout<< endl;
+  
+   cout<< mano_jugador<<endl;
+   cout<< endl;
+  
+  
+        
+    for(int i=0; i<3; i++)
+  {
+  	cout<< mazo[i]<<endl;
+   }
+   
+                        
+    return 0;
+}
+
+//‐---------‐-------‐----------------------------------------
+
+void repartiR(int mazo[], int mano[])
+{
+	
+	srand(time(NULL));
+	
+	do
+    {
+      carta = (rand() % 3)+1; 
+      
+     } 
+     while(mazo[carta-1] == 0);
+    
+     mazo[carta-1] = 0;
+     
+     
+ }    
+	
