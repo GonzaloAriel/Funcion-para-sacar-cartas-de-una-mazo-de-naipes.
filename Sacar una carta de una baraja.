@@ -6,19 +6,19 @@ recreando asi una baraja completa. Ejemplo:
 
 #include <iostream>
 using namespace std;
-#include <cstdlib> /* srand, rand  */           //LIBRERIAS PARA QUE ARROJE NUMEROS AL AZAR.
+#include <cstdlib> /* srand, rand  */           			//LIBRERIAS PARA QUE ARROJE NUMEROS AL AZAR.
 #include <ctime> /* time */
 
-void re_partir(int [], int[]);                            //REPARTE CARTAS AL AZAR, LE ENVIAS EL VECTOR MAZO Y EL VECTOR JUGADOR.
+void re_partir(int [], int[]);                        	    //REPARTE CARTAS AL AZAR, LE ENVIAS EL VECTOR MAZO Y EL VECTOR JUGADOR.
 
 int main()
 {
-    int cant = 10;                                              //CANTIDAD DE CARTAS SEGUN LA BARAJA QUE ELIJAMOS, POKER, ESPAÑOLAS, ETC.
+    int cant = 10;                                          //CANTIDAD DE CARTAS SEGUN LA BARAJA QUE ELIJAMOS, POKER, ESPAÑOLAS, ETC.
     int mazo[cant]= {};                                     //MAZO CON SU CANTIDAD
-    int mano_jugador[cant]= {};                     //MANO DEL JUGADOR CON UN TAMAÑO IGUAL AL DEL MAZO PERO SEGUN EL JUEGO USTED LASD LIMITA.
-    int mano_segundo_jugador[cant]= {};     //opcion si queremos agregar otro jugardor o los que necesitemos.
+    int mano_jugador[cant]= {};                     		//MANO DEL JUGADOR CON UN TAMAÑO IGUAL AL DEL MAZO PERO SEGUN EL JUEGO USTED LASD LIMITA.
+    int mano_segundo_jugador[cant]= {};     				//opcion si queremos agregar otro jugardor o los que necesitemos.
 
-    srand(time(NULL));                                    //ACTIVA LA FUNCION CON SRAND CON UNA MARCA DE TIEMPO PARA EL RANDOM.
+    srand(time(NULL));                                    	//ACTIVA LA FUNCION CON SRAND CON UNA MARCA DE TIEMPO PARA EL RANDOM.
 
     cout<<endl;
     cout<< "Baraja de cartas con todos los ID cargados"<<endl;
