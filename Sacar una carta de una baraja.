@@ -87,5 +87,3 @@ void re_partir(int mazo[], int mano[])      //Esta funcion ademas de repartir un
 }
 
 
-
-
