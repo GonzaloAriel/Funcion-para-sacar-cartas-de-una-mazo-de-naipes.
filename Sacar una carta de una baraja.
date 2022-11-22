@@ -1,66 +1,91 @@
+/*Basado en la idea de crear una baraja/mazo viltual de cartas, podemos realizar este pequeño proyecto
+creando un vector con numeros dentro al que llamaremos ID. Cada numero identificara cada tipo de carta
+recreando asi una baraja completa. Ejemplo:
+1 imaginamos que es el " AS DE CORAZONES", 2 "EL DOS DE CORAZONES", 3 "EL TRES DE CORAZONES...
+14 "EL AS DE PICA", 15 "EL DOS DE PICA, Y ASI..*/
+
 #include <iostream>
 using namespace std;
-#include <cstdlib> /* srand, rand  */
+#include <cstdlib> /* srand, rand  */           //LIBRERIAS PARA QUE ARROJE NUMEROS AL AZAR.
 #include <ctime> /* time */
 
-void repartiR(int a[], int b[]);
+void re_partir(int [], int[]);                            //REPARTE CARTAS AL AZAR, LE ENVIAS EL VECTOR MAZO Y EL VECTOR JUGADOR.
 
 int main()
 {
-   
-    srand(time(NULL));
+    int cant = 10;                                              //CANTIDAD DE CARTAS SEGUN LA BARAJA QUE ELIJAMOS, POKER, ESPAÑOLAS, ETC.
+    int mazo[cant]= {};                                     //MAZO CON SU CANTIDAD
+    int mano_jugador[cant]= {};                     //MANO DEL JUGADOR CON UN TAMAÑO IGUAL AL DEL MAZO PERO SEGUN EL JUEGO USTED LASD LIMITA.
+    int mano_segundo_jugador[cant]= {};     //opcion si queremos agregar otro jugardor o los que necesitemos.
 
-  int mano_jugador = 0;
-  int mano_cpu = 0;
-  int mazo[3]={};
-  
-  
-  for(int i=0; i<3; i++)
-  {
-  	mazo[i] += i+1;
-  	cout<< mazo[i]<<endl;
-  }
-  
-  cout<<endl; 
-  
-  
-  
-   repartiR(mazo, mano_jugador);
-   repartiR(mazo, mano_jugador);
- 
-   cout<< mano_jugador<<endl;
-   cout<< endl;
-  
-   cout<< mano_jugador<<endl;
-   cout<< endl;
-  
-  
-        
-    for(int i=0; i<3; i++)
-  {
-  	cout<< mazo[i]<<endl;
-   }
-   
-                        
+    srand(time(NULL));                                    //ACTIVA LA FUNCION CON SRAND CON UNA MARCA DE TIEMPO PARA EL RANDOM.
+
+    cout<<endl;
+    cout<< "Baraja de cartas con todos los ID cargados"<<endl;
+    cout<< "------------------------------------------------------------"<<endl;
+    for(int i=0; i<cant; i++)
+    {
+        mazo[i] += i+1;
+        cout<< mazo[i]<<endl;
+    }
+
+    cout<<endl<<endl;
+
+    for(int i=0; i<5; i++)
+    {
+        re_partir(mazo, mano_jugador);
+        re_partir(mazo, mano_segundo_jugador);
+    }
+
+
+
+    cout<< "Cartas de jugador 1:"<<endl;
+      cout<< "--------------------"<<endl<<endl;
+    for(int i=0; i<cant; i++)
+    {
+        cout<< mano_jugador[i]<< "  ";
+    }
+
+    cout<<endl<<endl;
+
+    cout<< "Cartas de jugador 2:"<<endl;
+        cout<< "--------------------"<<endl<<endl;
+    for(int i=0; i<cant; i++)
+    {
+        cout<< mano_segundo_jugador[i]<< "  ";
+    }
+
+    cout<<endl<<endl<<endl;
+
+    cout<< "Baraja de cartas ya vacia:"<<endl;
+    cout<< "------------------------------------------------------------"<<endl<<endl;
+    for(int i=0; i<cant; i++)
+    {
+        cout<< mazo[i];
+    }
+
+       cout<<endl<<endl;
+
     return 0;
 }
+//****************FUNCION PARA SACAR UNA CARTA DE LA BARAJA O MAZO AL AZAR*****************
 
-//‐---------‐-------‐----------------------------------------
-
-void repartiR(int mazo[], int mano[])
+void re_partir(int mazo[], int mano[])      //Esta funcion ademas de repartir una carta al azar, no repite la carta.
 {
-	
-	srand(time(NULL));
-	
-	do
+    srand(time(NULL));
+
+    int carta = 0;
+
+    do
     {
-      carta = (rand() % 3)+1; 
-      
-     } 
-     while(mazo[carta-1] == 0);
-    
-     mazo[carta-1] = 0;
-     
-     
- }    
-	
+        carta = (rand() % 10)+1;
+    }
+    while(mazo[carta-1] == 0);
+
+    mano[carta-1] = carta;
+    mazo[carta-1] = 0;
+}
+
+
+
+
