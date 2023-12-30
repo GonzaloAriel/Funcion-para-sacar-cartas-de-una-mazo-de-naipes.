@@ -9,7 +9,7 @@ using namespace std;
 #include <cstdlib> /* srand, rand  */           			//LIBRERIAS PARA QUE ARROJE NUMEROS AL AZAR.
 #include <ctime> /* time */
 
-void re_partir(int [], int[]);                        	    //REPARTE CARTAS AL AZAR, LE ENVIAS EL VECTOR MAZO Y EL VECTOR JUGADOR.
+void re_partir(int [], int[]);                        	    //REPARTE CARTAS AL AZAR, ENVIAS EL VECTOR MAZO Y EL VECTOR JUGADOR.
 
 int main()
 {
